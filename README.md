@@ -14,9 +14,7 @@
       <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
     </a>
     <a href="https://github.com/stabrise/spark-pdf/blob/main/LICENSE"><img alt="GitHub" src="https://img.shields.io/github/license/stabrise/spark-pdf.svg?color=blue"></a>
-    <a href="https://stabrise.com"><img alt="StabRise" src="https://img.shields.
-io/badge/powered%20by-StabRise-orange.svg?style=flat&colorA=E1523D&colorB=blue"/></a>
-
+    <a href="https://stabrise.com"><img alt="StabRise" src="https://img.shields.io/badge/powered%20by-StabRise-orange.svg?style=flat&colorA=E1523D&colorB=blue"/></a>
 </p>
 
 # PDF Redaction API
