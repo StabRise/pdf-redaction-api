@@ -23,14 +23,19 @@ It is example of using API for [https://pdf-redaction.com](https://pdf-redaction
 
 Free API for redacting PDFs available at [https://api.pdf-redaction.com/api/docs](https://api.pdf-redaction.com/api/docs)
 
-> Limitations for free version:
+> Limitations for free trial version:
 >  * 1 page per request
 >  * 1 requests per minute
 
-| Chapter                     | Notebook                                                                                                                                                                           |
-|-----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1: PDF Redaction API        | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/StabRise/pdf-redaction-api/blob/main/jupyter/PDF-Redaction-API.ipynb)   |
-| 2: PDF Redaction API base64 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/StabRise/pdf-redaction-api/blob/main/jupyter/PDF-Redaction-API-base64.ipynb)          |
+# Jupyter Notebooks with examples
 
+| Chapter                           | Notebook                                                                                                                                                                                                  |
+|-----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1: PDF Redaction API              | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/StabRise/pdf-redaction-api/blob/main/jupyter/PDF-Redaction-API.ipynb)               |
+| 2: PDF Redaction API base64       | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/StabRise/pdf-redaction-api/blob/main/jupyter/PDF-Redaction-API-base64.ipynb)        |
+| 2: PDF Redaction API using prompt | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/StabRise/pdf-redaction-api/blob/main/jupyter/PDF-Redaction-API-base64-prompt.ipynb) |
 
+# Redaction PDF using custom prompt
+
+This provides the flexibility to redact PDF using custom prompt.
 
