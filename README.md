@@ -39,3 +39,8 @@ Free API for redacting PDFs available at [https://api.pdf-redaction.com/api/docs
 
 This provides the flexibility to redact PDF using custom prompt.
 
+# Demo with web UI
+
+
+[![PDF Redaction](./images/open_in_colab.png)](https://pdf-redaction.com)
+
