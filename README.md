@@ -23,6 +23,13 @@ It is example of using API for [https://pdf-redaction.com](https://pdf-redaction
 
 Free API for redacting PDFs available at [https://api.pdf-redaction.com/api/docs](https://api.pdf-redaction.com/api/docs)
 
+# Key Features
+
+* Redact PDF using custom prompt
+* Filter detected entities by type
+* Support for multiple languages
+* Support Digital and Scanned(image based) PDFs
+
 > Limitations for free trial version:
 >  * 1 page per request
 >  * 1 requests per minute
@@ -41,6 +48,7 @@ This provides the flexibility to redact PDF using custom prompt.
 
 # Demo with web UI
 
+You can try it out for free at [https://pdf-redaction.com](https://pdf-redaction.com)
 
-[![PDF Redaction](./images/open_in_colab.png)](https://pdf-redaction.com)
+[![PDF Redaction](https://raw.githubusercontent.com/StabRise/pdf-redaction-api/refs/heads/main/images/ScreenshotPdfRedaction.png)](https://pdf-redaction.com)
 
