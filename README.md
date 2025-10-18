@@ -30,20 +30,30 @@ Free API for redacting PDFs available at [https://api.pdf-redaction.com/api/docs
 * Support for multiple languages
 * Support Digital and Scanned(image based) PDFs
 
-> Limitations for free trial version:
->  * 1 page per request
->  * 1 requests per minute
+# API Key
+
+For generate API Key please go to the: [https://pdf-redaction.com/profile/apikeys/](https://pdf-redaction.com/profile/apikeys/)
+
+Put API Key to the env variable `PDF_REDACTION_API_KEY` or to `.env` file.
+
+# Limitations
+
+Limitations for free version:
+* 1 page per request
+* 50 Free requests per month
+* 5 requests per minute
 
 # Jupyter Notebooks with examples
 
-| Chapter                               | Notebook                                                                                                                                                                                                     |
-|---------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1: PDF Redaction API                  | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/StabRise/pdf-redaction-api/blob/main/jupyter/PDF-Redaction-API.ipynb)                  |
-| 2: PDF Redaction API base64           | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/StabRise/pdf-redaction-api/blob/main/jupyter/PDF-Redaction-API-base64.ipynb)           |
-| 3: PDF Redaction API using prompt     | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/StabRise/pdf-redaction-api/blob/main/jupyter/PDF-Redaction-API-base64-prompt.ipynb)    |
-| 4: Redact QR Codes from PDF           | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/StabRise/pdf-redaction-api/blob/main/jupyter/PDF-Redaction-API-base64-qrcode.ipynb)    |
-| 5: Redact Rotated/Vertical text in PDF | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/StabRise/pdf-redaction-api/blob/main/jupyter/PDF-Redaction-API-base64-rotated.ipynb)   |
-| 6: Redact Signatures from PDF         | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/StabRise/pdf-redaction-api/blob/main/jupyter/PDF-Redaction-API-base64-signature.ipynb) |
+| Chapter                                | Notebook                                                                                                                                                                                                          |
+|----------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1: PDF Redaction API                   | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/StabRise/pdf-redaction-api/blob/main/jupyter/PDF-Redaction-API.ipynb)                       |
+| 2: PDF Redaction API base64            | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/StabRise/pdf-redaction-api/blob/main/jupyter/PDF-Redaction-API-base64.ipynb)                |
+| 3: PDF Redaction API using prompt      | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/StabRise/pdf-redaction-api/blob/main/jupyter/PDF-Redaction-API-base64-prompt.ipynb)         |
+| 4: Redact QR Codes from PDF            | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/StabRise/pdf-redaction-api/blob/main/jupyter/PDF-Redaction-API-base64-qrcode.ipynb)         |
+| 5: Redact Rotated/Vertical text in PDF | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/StabRise/pdf-redaction-api/blob/main/jupyter/PDF-Redaction-API-base64-rotated.ipynb)        |
+| 6: Redact Signatures from PDF          | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/StabRise/pdf-redaction-api/blob/main/jupyter/PDF-Redaction-API-base64-signature.ipynb)      |
+| 6: Redact Faces from PDF               | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/StabRise/pdf-redaction-api/blob/main/jupyter/PDF-Redaction-API-base64-face-redaction.ipynb) |
 
 
 # Redaction PDF using custom prompt
