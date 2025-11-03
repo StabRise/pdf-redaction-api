@@ -32,7 +32,11 @@ Free API for redacting PDFs available at [https://api.pdf-redaction.com/api/docs
 
 # API Key
 
-For generate API Key please go to the: [https://pdf-redaction.com/profile/apikeys/](https://pdf-redaction.com/profile/apikeys/)
+For generate API Key please go to the: [https://pdf-redaction.com/apikeys/](https://pdf-redaction.com/apikeys/)
+
+For check usage: [https://pdf-redaction.com/apikeys/usage/](https://pdf-redaction.com/apikeys/usage/)
+
+![usage](./images/usage.png)
 
 Put API Key to the env variable `PDF_REDACTION_API_KEY` or to `.env` file.
 
