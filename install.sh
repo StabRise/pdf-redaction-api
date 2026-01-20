@@ -18,6 +18,17 @@ info() { echo -e "\033[0;34m[INFO]\033[0m $*"; }
 warn() { echo -e "\033[0;33m[WARN]\033[0m $*"; }
 error() { echo -e "\033[0;31m[ERROR]\033[0m $*" >&2; exit 1; }
 
+# --- Colors ---
+BLUE='\033[0;34m'
+GREEN='\033[0;32m'
+NC='\033[0m' # No Color
+
+# --- Professional Header ---
+echo -e "${BLUE}==============================================${NC}"
+echo -e "${BLUE}        PDF Redaction API Installer           ${NC}"
+echo -e "${BLUE}==============================================${NC}"
+echo -e "System check and environment setup starting..."
+
 # 1. Dependency Check
 if ! command -v docker &> /dev/null; then
     error "Docker is not installed. Please install Docker first."
@@ -87,8 +98,8 @@ docker compose up -d
 # 6. Health Check
 info "Waiting for API to stabilize..."
 sleep 5
-if curl -s -f http://localhost:8080/health > /dev/null; then
-    info "✅ Success! API is responding at http://localhost:8080"
+if curl -s -f http://localhost:8002/api/health > /dev/null; then
+    info "✅ Success! API is responding at http://localhost:8002/api/docs"
 else
     warn "API started but health check failed. Check logs with 'docker compose logs'."
 fi

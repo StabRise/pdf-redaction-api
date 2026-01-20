@@ -1,7 +1,10 @@
+name: pdf-redaction-api
+
 services:
   pdf-redaction-api: &main_app
     image: stabrise/pdf-redaction-api:latest
     restart: always
+    container_name: pdf-redaction-api
     env_file:
       - .env
     ports:

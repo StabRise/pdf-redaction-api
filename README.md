@@ -47,7 +47,7 @@ Limitations for free version:
 * 50 Free requests per month
 * 5 requests per minute
 
-🚀 Instant Install self-hosted PDF Redaction API
+# 🚀 Instant Install self-hosted PDF Redaction API
 
  - Option A (curl): 
     ```bash
