@@ -1,0 +1,13 @@
+services:
+  pdf-redaction-api: &main_app
+    image: stabrise/pdf-redaction-api:latest
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "${PDF_REDACTION_API_PORT}:${PDF_REDACTION_API_PORT}"
+
+    environment:
+      PDF_REDACTION_API_HOST: 0.0.0.0
+      TIMEOUT: 190
+      GRACEFUL_TIMEOUT: 190

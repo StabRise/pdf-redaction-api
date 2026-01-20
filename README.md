@@ -47,6 +47,17 @@ Limitations for free version:
 * 50 Free requests per month
 * 5 requests per minute
 
+🚀 Instant Install self-hosted PDF Redaction API
+
+ - Option A (curl): 
+    ```bash
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/StabRise/pdf-redaction-api/main/install.sh)"
+    ```
+
+ - Option B (wget): 
+    ```bash
+    /bin/bash -c "$(wget -qO- https://raw.githubusercontent.com/StabRise/pdf-redaction-api/main/install.sh)"
+    ```
 # Jupyter Notebooks with examples
 
 | Chapter                                | Notebook                                                                                                                                                                                                          |
