@@ -12,6 +12,7 @@ EXAMPLE_FILE=".env.example"
 COMPOSE_FILE="docker-compose.yml"
 LICENSE_VAR="PDF_REDACTION_API_LICENSE"
 PORTAL_URL="https://pdf-redaction.com/licenses"
+DOCS_URL="http://localhost:8002/api/docs"
 
 # --- Helper Functions ---
 info() { echo -e "\033[0;34m[INFO]\033[0m $*"; }
@@ -98,8 +99,6 @@ docker compose up -d
 # 6. Health Check
 info "Waiting for API to stabilize..."
 
-DOCS_URL="http://localhost:8002/api/docs"
-
 open_docs() {
     info "Opening API documentation..."
     # Check for different OS 'open' commands
@@ -115,7 +114,7 @@ open_docs() {
 }
 sleep 5
 if curl -s -f http://localhost:8002/api/health > /dev/null; then
-    info "✅ Success! API is responding at $DOCS_URL"
+    info "✅ Success! Swagger API DOC is available at $DOCS_URL"
 else
     warn "API started but health check failed. Check logs with 'docker compose logs'."
 fi
