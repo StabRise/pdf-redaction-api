@@ -115,6 +115,7 @@ open_docs() {
 sleep 5
 if curl -s -f http://localhost:8002/api/health > /dev/null; then
     info "✅ Success! Swagger API DOC is available at $DOCS_URL"
+    open_docs
 else
     warn "API started but health check failed. Check logs with 'docker compose logs'."
 fi
