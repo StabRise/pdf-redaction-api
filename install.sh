@@ -97,9 +97,25 @@ docker compose up -d
 
 # 6. Health Check
 info "Waiting for API to stabilize..."
+
+DOCS_URL="http://localhost:8002/api/docs"
+
+open_docs() {
+    info "Opening API documentation..."
+    # Check for different OS 'open' commands
+    if command -v open > /dev/null; then
+        open "$DOCS_URL"             # macOS
+    elif command -v xdg-open > /dev/null; then
+        xdg-open "$DOCS_URL"         # Linux
+    elif command -v explorer.exe > /dev/null; then
+        explorer.exe "$DOCS_URL"     # WSL (Windows Subsystem for Linux)
+    else
+        warn "Please visit the docs manually: $DOCS_URL"
+    fi
+}
 sleep 5
 if curl -s -f http://localhost:8002/api/health > /dev/null; then
-    info "✅ Success! API is responding at http://localhost:8002/api/docs"
+    info "✅ Success! API is responding at $DOCS_URL"
 else
     warn "API started but health check failed. Check logs with 'docker compose logs'."
 fi
