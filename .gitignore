@@ -195,5 +195,5 @@ cython_debug/
 
 .idea
 jupyter/*.pdf
-jupyter/output/*
+#jupyter/output/*
 examples/pdfs/private/
