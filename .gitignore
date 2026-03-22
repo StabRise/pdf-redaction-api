@@ -194,6 +194,6 @@ cython_debug/
 .cursorindexingignore
 
 .idea
-/jupyter/*.pdf
-/jupyter/output/*
-/examples/pdfs/private/
+jupyter/*.pdf
+jupyter/output/*
+examples/pdfs/private/

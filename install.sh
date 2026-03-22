@@ -30,12 +30,25 @@ echo -e "${BLUE}        PDF Redaction API Installer           ${NC}"
 echo -e "${BLUE}==============================================${NC}"
 echo -e "System check and environment setup starting..."
 
-# 1. Dependency Check
+# 1. Create and navigate to project directory
+PROJECT_DIR="pdf-redaction-api"
+if [ -d "$PROJECT_DIR" ]; then
+    warn "Directory '$PROJECT_DIR' already exists. Using existing directory."
+    cd "$PROJECT_DIR"
+else
+    info "Creating directory: $PROJECT_DIR"
+    mkdir -p "$PROJECT_DIR"
+    cd "$PROJECT_DIR"
+fi
+
+info "Working directory: $(pwd)"
+
+# 2. Dependency Check
 if ! command -v docker &> /dev/null; then
     error "Docker is not installed. Please install Docker first."
 fi
 
-# 2. Download Configuration Files
+# 3. Download Configuration Files
 # Helper function to download files
 download_file() {
     local url=$1
@@ -54,13 +67,13 @@ info "Downloading configuration from GitHub..."
 download_file "$REPO_RAW_URL/$COMPOSE_FILE" "$COMPOSE_FILE"
 download_file "$REPO_RAW_URL/$EXAMPLE_FILE" "$EXAMPLE_FILE"
 
-# 3. Ensure .env exists
+# 4. Ensure .env exists
 if [ ! -f "$ENV_FILE" ]; then
     info "Creating $ENV_FILE from $EXAMPLE_FILE."
     cp "$EXAMPLE_FILE" "$ENV_FILE"
 fi
 
-# 4. License Key Logic
+# 5. License Key Logic
 # Check shell environment first, then the .env file
 CURRENT_LICENSE=${!LICENSE_VAR:-$(grep -E "^${LICENSE_VAR}=" "$ENV_FILE" | cut -d'=' -f2- || true)}
 
@@ -74,8 +87,24 @@ else
     elif command -v xdg-open > /dev/null; then xdg-open "$PORTAL_URL"
     else warn "Please visit: $PORTAL_URL"; fi
 
-    # Secure prompt
-    read -r -s -p "Enter your License Key: " USER_KEY
+    # Secure prompt with asterisks
+    echo -n "Enter your License Key: "
+    USER_KEY=""
+    while IFS= read -r -n1 -s char; do
+        # Enter key
+        if [[ "$char" == "" ]]; then
+            break
+        # Backspace/Delete
+        elif [[ "$char" == $'\177' || "$char" == $'\010' ]]; then
+            if [ -n "$USER_KEY" ]; then
+                USER_KEY="${USER_KEY%?}"
+                printf '\b \b'
+            fi
+        else
+            USER_KEY+="$char"
+            printf '*'
+        fi
+    done
     echo
 
     if [ -z "$USER_KEY" ]; then
@@ -91,12 +120,17 @@ else
     info "License key saved to $ENV_FILE."
 fi
 
-# 5. Execute Docker Compose
+# 6. Execute Docker Compose
 info "Pulling images and starting API..."
 docker compose pull
 docker compose up -d
 
-# 6. Health Check
+# Show initial startup logs
+info "Services starting. Showing initial logs (Ctrl+C to skip log watching)..."
+perl -e 'alarm 10; exec @ARGV' docker compose logs --tail=50 --follow &
+LOGS_PID=$!
+
+# 7. Health Check
 info "Waiting for API to stabilize..."
 
 open_docs() {
@@ -113,11 +147,19 @@ open_docs() {
     fi
 }
 sleep 5
+
+# Stop the log follower if still running
+kill $LOGS_PID 2>/dev/null || true
+
 if curl -s -f http://localhost:8002/api/health > /dev/null; then
     info "✅ Success! Swagger API DOC is available at $DOCS_URL"
     info "Next step: Please review and fill in the remaining environment variables in $ENV_FILE (use $EXAMPLE_FILE as a reference)."
     info "After updating $ENV_FILE, restart services with: docker compose up -d"
     open_docs
+    echo ""
+    info "💡 Tip: Use 'docker compose logs -f' to follow logs, or 'docker compose down' to stop services."
 else
     warn "API started but health check failed. Check logs with 'docker compose logs'."
+    info "Showing recent logs for debugging:"
+    docker compose logs --tail=50
 fi
