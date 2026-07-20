@@ -15,6 +15,9 @@
     </a>
     <a href="https://github.com/stabrise/spark-pdf/blob/main/LICENSE"><img alt="GitHub" src="https://img.shields.io/github/license/stabrise/spark-pdf.svg?color=blue"></a>
     <a href="https://stabrise.com"><img alt="StabRise" src="https://img.shields.io/badge/powered%20by-StabRise-orange.svg?style=flat&colorA=E1523D&colorB=blue"/></a>
+  <a href="https://smithery.ai/servers/stabrise/pdf-redaction">
+  <img src="https://smithery.ai/badge/stabrise/pdf-redaction" alt="smithery badge">
+</a>
 </p>
 
 # PDF Redaction API
